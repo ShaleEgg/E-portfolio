@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +6,24 @@
 
     <title>Shaleena Egdell | Engineering Portfolio</title>
 
-    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style> 
+    <style>
 
         /* ========================================
            01. COLOUR PALETTE
-           Change these to update the entire website.
         ======================================== */
 
         :root {
-            --cream: #F5F0E6;
-            --beige: #DED2C3;
-            --burgundy: #792D32;
-            --dark-burgundy: #4B2226;
-            --charcoal: #292722;
+            --cream: #F7F5EF;
+            --beige: #E0E6E7;
+            --burgundy: #243C4C;
+            --dark-burgundy: #192B40;
+            --charcoal: #243C4C;
             --white: #FFFFFF;
-            --muted: #71675E;
+            --muted: #53616A;
+            --slate: #587989;
+            --soft-blue: #A5BAC5;
         }
 
         * {
@@ -70,7 +69,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 22px 6%;
-            border-bottom: 1px solid #792D3225;
+            border-bottom: 1px solid #243C4C25;
             background: var(--cream);
         }
 
@@ -101,16 +100,17 @@
 
         /* ========================================
            03. HOMEPAGE HERO
-           Replace the portrait placeholder with
-           your own photograph later.
         ======================================== */
 
         .hero {
             background: var(--beige);
-            padding: 65px 8%;
+            padding: 65px 6%;
             min-height: 620px;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(0, 1fr)
+                minmax(0, 0.8fr);
             align-items: center;
             gap: 40px;
         }
@@ -123,7 +123,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(60px, 8vw, 130px);
+            font-size: clamp(48px, 6.4vw, 110px);
             color: var(--burgundy);
             letter-spacing: -3px;
             margin-bottom: 25px;
@@ -139,10 +139,10 @@
             margin-bottom: 30px;
         }
 
-         .portrait {
+        .portrait {
             aspect-ratio: 4 / 5;
             max-height: 550px;
-            background: #C7B6A4;
+            background: var(--soft-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -153,6 +153,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 85%;
         }
 
         .button {
@@ -174,7 +175,53 @@
         }
 
         /* ========================================
-           04. GENERAL SECTION FORMATTING
+           04. HOMEPAGE PROFESSIONAL OVERVIEW
+        ======================================== */
+
+        .hero-overview {
+            padding-left: 10px;
+        }
+
+        .overview-heading {
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 22px;
+        }
+
+        .overview-item {
+            padding: 17px 0;
+            border-top: 1px solid #A5BAC5;
+        }
+
+        .overview-item:first-of-type {
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .overview-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 7px;
+        }
+
+        .overview-item h3 {
+            font-size: clamp(25px, 2.4vw, 35px);
+            color: var(--burgundy);
+            margin-bottom: 7px;
+        }
+
+        .overview-item p:not(.overview-label) {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        /* ========================================
+           05. GENERAL SECTION FORMATTING
         ======================================== */
 
         section {
@@ -195,7 +242,7 @@
         }
 
         /* ========================================
-           05. PERSONAL QUOTE AND BIOGRAPHY
+           06. PERSONAL QUOTE AND BIOGRAPHY
         ======================================== */
 
         .about {
@@ -225,7 +272,7 @@
         }
 
         /* ========================================
-           06. DECORATIVE SECTION DIVIDER
+           07. DECORATIVE SECTION DIVIDER
         ======================================== */
 
         .statement {
@@ -241,12 +288,12 @@
         }
 
         /* ========================================
-           07. ENGINEERING EXPERIENCE
+           08. ENGINEERING EXPERIENCE
         ======================================== */
 
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
         }
 
@@ -269,7 +316,9 @@
         }
 
         .image-placeholder img {
+            width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         .card-number {
@@ -298,52 +347,61 @@
         }
 
         /* ========================================
-           08. PERSONAL INTERESTS
+           09. BEYOND ENGINEERING
+           Same layout as Engineering Journey,
+           but with larger photographs.
         ======================================== */
 
-        .personal {
-            background: var(--charcoal);
-            color: var(--cream);
-        }
-
-        .personal .section-label {
-            color: var(--beige);
+        #beyond {
+            background: var(--cream);
+            color: var(--charcoal);
         }
 
         .personal-intro {
-            max-width: 650px;
+            max-width: 750px;
             margin-bottom: 40px;
+            font-size: 16px;
+            color: var(--muted);
         }
 
-        .personal-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .personal-image {
+        #beyond .image-placeholder {
             aspect-ratio: 3 / 4;
-            background: #514A43;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
+            background: var(--beige);
+            margin-bottom: 20px;
         }
 
-        .personal-image img {
+        #beyond .image-placeholder img {
+            width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
-        .personal-caption {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 27px;
-            font-style: italic;
-            margin-top: 12px;
+        #beyond .swimming-photo {
+            object-position: right center;
+        }
+
+        #beyond .exploring-photo {
+            object-position: center center;
+        }
+
+        #beyond .image-placeholder .community-photo {
+            object-fit: contain;
+            object-position: center center;
+        }
+
+        #beyond .experience-card h3 {
+            font-size: 35px;
+            margin: 12px 0;
+        }
+
+        #beyond .experience-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--muted);
         }
 
         /* ========================================
-           09. EDUCATION AND SKILLS
+           10. EDUCATION AND SKILLS
         ======================================== */
 
         .snapshot-grid {
@@ -368,7 +426,7 @@
         }
 
         /* ========================================
-           10. CONTACT AND FOOTER
+           11. CONTACT AND FOOTER
         ======================================== */
 
         footer {
@@ -401,9 +459,38 @@
         }
 
         /* ========================================
-           11. MOBILE RESPONSIVENESS
-           Automatically adjusts the layout for
-           phones and smaller screens.
+           12. TABLET RESPONSIVENESS
+        ======================================== */
+
+        @media (max-width: 1100px) {
+
+            .hero {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px;
+            }
+
+            .hero-overview {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 20px;
+                padding-left: 0;
+            }
+
+            .overview-heading {
+                grid-column: 1 / -1;
+                margin-bottom: 0;
+            }
+
+            .overview-item,
+            .overview-item:first-of-type {
+                border-top: 1px solid var(--soft-blue);
+                padding-top: 15px;
+            }
+        }
+
+        /* ========================================
+           13. MOBILE RESPONSIVENESS
         ======================================== */
 
         @media (max-width: 800px) {
@@ -431,6 +518,18 @@
 
             .hero h1 {
                 letter-spacing: -1px;
+                font-size: clamp(60px, 12vw, 95px);
+            }
+
+            .portrait {
+                width: 100%;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .hero-overview {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
 
             section {
@@ -443,14 +542,19 @@
                 gap: 40px;
             }
 
-            .personal-grid {
-                grid-template-columns: 1fr 1fr;
+            #beyond .image-placeholder {
+                aspect-ratio: 3 / 4;
             }
         }
 
         @media (max-width: 420px) {
-            .personal-grid {
+
+            .hero-overview {
                 grid-template-columns: 1fr;
+            }
+
+            .nav-links a {
+                font-size: 10px;
             }
         }
 
@@ -461,10 +565,10 @@
 
     <!-- ======================================
          NAVIGATION BAR
-         These links connect your three pages.
     ======================================= -->
 
     <nav>
+
         <a class="logo" href="index.html">
             Shaleena <em>Egdell</em>
         </a>
@@ -474,6 +578,7 @@
             <a href="projects.html">02 Project Entries</a>
             <a href="reflection.html">03 Reflection</a>
         </div>
+
     </nav>
 
 
@@ -483,7 +588,10 @@
 
     <header class="hero">
 
+        <!-- Introduction -->
+
         <div>
+
             <p class="eyebrow">
                 Civil Engineering · Design · Leadership
             </p>
@@ -502,23 +610,90 @@
             <a class="button" href="#about">
                 A little about me
             </a>
+
         </div>
 
-       <div class="portrait">
-    <img src="portrait.jpg" alt="Portrait of Shaleena Egdell">
-</div>
+
+        <!-- Main portrait -->
+
+        <div class="portrait">
+
+            <img src="portrait.jpg"
+                 alt="Portrait of Shaleena Egdell">
+
+        </div>
+
+
+        <!-- Professional overview -->
+
+        <aside class="hero-overview">
+
+            <p class="overview-heading">
+                A little at a glance
+            </p>
+
+            <div class="overview-item">
+
+                <p class="overview-label">
+                    01 / Education
+                </p>
+
+                <h3>UBC Okanagan</h3>
+
+                <p>Bachelor of Applied Science</p>
+                <p>Civil Engineering</p>
+
+            </div>
+
+            <div class="overview-item">
+
+                <p class="overview-label">
+                    02 / Currently
+                </p>
+
+                <h3>4th Year</h3>
+
+                <p>Expected graduation: 2027</p>
+
+            </div>
+
+            <div class="overview-item">
+
+                <p class="overview-label">
+                    03 / Leadership
+                </p>
+
+                <h3>Team Captain</h3>
+
+                <p>UBCO Steel Bridge</p>
+
+            </div>
+
+            <div class="overview-item">
+
+                <p class="overview-label">
+                    04 / Interests
+                </p>
+
+                <p>Structural Engineering</p>
+                <p>Construction Engineering</p>
+                <p>Project Management</p>
+
+            </div>
+
+        </aside>
 
     </header>
 
 
     <!-- ======================================
          ABOUT ME / PERSONAL PHILOSOPHY
-         Edit this text to reflect your own story.
     ======================================= -->
 
     <section class="about" id="about">
 
         <div>
+
             <p class="section-label">
                 01 / A little about me
             </p>
@@ -528,6 +703,7 @@
                 <em>curiosity</em> and ends with
                 <em>purpose.</em>
             </div>
+
         </div>
 
         <div class="about-text">
@@ -567,10 +743,14 @@
     </section>
 
 
-    <!-- DECORATIVE BANNER -->
+    <!-- ======================================
+         DECORATIVE BANNER
+    ======================================= -->
 
     <div class="statement">
+
         <h2>The work behind the passion.</h2>
+
     </div>
 
 
@@ -590,6 +770,7 @@
 
         <div class="experience-grid">
 
+
             <!-- CARD 1: PROFESSIONAL EXPERIENCE -->
 
             <article class="experience-card">
@@ -598,7 +779,9 @@
                     Add a workplace photograph
                 </div>
 
-                <p class="card-number">01 / Industry</p>
+                <p class="card-number">
+                    01 / Industry
+                </p>
 
                 <h3>Engineering in practice.</h3>
 
@@ -608,9 +791,6 @@
                     an understanding of how real-world
                     projects are designed and delivered.
                 </p>
-
-                <!-- Add your employer, job title and
-                     specific responsibilities here. -->
 
             </article>
 
@@ -623,7 +803,9 @@
                     Add a Steel Bridge photograph
                 </div>
 
-                <p class="card-number">02 / Leadership</p>
+                <p class="card-number">
+                    02 / Leadership
+                </p>
 
                 <h3>More than building bridges.</h3>
 
@@ -646,7 +828,9 @@
                     Add an approved capstone photograph
                 </div>
 
-                <p class="card-number">03 / Capstone</p>
+                <p class="card-number">
+                    03 / Capstone
+                </p>
 
                 <h3>Designing with purpose.</h3>
 
@@ -669,21 +853,18 @@
     </section>
 
 
-   <!-- ========================================
-     03. BEYOND ENGINEERING
-========================================= -->
+    <!-- ======================================
+         BEYOND ENGINEERING
+    ======================================= -->
 
-<section id="beyond" class="personal-section">
+    <section id="beyond">
 
-    <div class="personal-container">
+        <p class="section-label">
+            03 / Beyond Engineering
+        </p>
 
-        <!-- Section heading -->
-        <div class="personal-label">
-            03 / BEYOND ENGINEERING
-        </div>
-
-        <h2 class="personal-heading">
-            Life outside <em>the drawings.</em>
+        <h2 class="section-title">
+            Life beyond <em>engineering.</em>
         </h2>
 
         <p class="personal-intro">
@@ -693,16 +874,19 @@
             creativity, and character we bring into it.
         </p>
 
-        <!-- Three personal interests -->
-        <div class="personal-grid">
+        <div class="experience-grid">
 
-            <!-- 01. Swimming and triathlon -->
-            <article class="personal-card">
 
-                <div class="personal-photo">
+            <!-- CARD 1: SWIMMING -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+
                     <img src="swimming.jpg"
                          alt="Open-water swim training"
                          class="swimming-photo">
+
                 </div>
 
                 <h3>Challenging myself.</h3>
@@ -718,13 +902,17 @@
 
             </article>
 
-            <!-- 02. Exploring and creativity -->
-            <article class="personal-card">
 
-                <div class="personal-photo">
+            <!-- CARD 2: EXPLORING -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+
                     <img src="exploring.jpeg"
                          alt="Exploring the coastline"
                          class="exploring-photo">
+
                 </div>
 
                 <h3>Staying curious.</h3>
@@ -740,13 +928,17 @@
 
             </article>
 
-            <!-- 03. Community and connection -->
-            <article class="personal-card">
 
-                <div class="personal-photo">
+            <!-- CARD 3: COMMUNITY -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+
                     <img src="dinner.JPG"
                          alt="Sharing dinner with friends"
                          class="community-photo">
+
                 </div>
 
                 <h3>Bringing people together.</h3>
@@ -765,9 +957,8 @@
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
     <!-- ======================================
          EDUCATION, SKILLS AND CAREER INTERESTS
@@ -779,35 +970,44 @@
             04 / Professional snapshot
         </p>
 
-        <h2 class="section-title">At a glance.</h2>
+        <h2 class="section-title">
+            At a glance.
+        </h2>
 
         <div class="snapshot-grid">
 
             <div class="snapshot-item">
+
                 <h3>Education</h3>
-                <p>
-                    University of British Columbia Okanagan
-                </p>
+
+                <p>University of British Columbia Okanagan</p>
                 <p>Bachelor of Applied Science</p>
                 <p>Civil Engineering</p>
                 <p>Expected graduation: 2027</p>
+
             </div>
 
             <div class="snapshot-item">
+
                 <h3>Skills</h3>
+
                 <p>Engineering design</p>
                 <p>Project management</p>
                 <p>Technical communication</p>
                 <p>Team leadership</p>
                 <p>Collaborative problem-solving</p>
+
             </div>
 
             <div class="snapshot-item">
+
                 <h3>Career interests</h3>
+
                 <p>Structural engineering</p>
                 <p>Construction engineering</p>
                 <p>Infrastructure development</p>
                 <p>Project management</p>
+
             </div>
 
         </div>
@@ -817,8 +1017,6 @@
 
     <!-- ======================================
          FOOTER
-         Replace the placeholder links with
-         your actual contact information.
     ======================================= -->
 
     <footer>
@@ -828,12 +1026,15 @@
         <div class="contact-links">
 
             <!-- Replace # with your LinkedIn URL -->
+
             <a href="#">LinkedIn</a>
 
             <!-- Replace # with mailto:your-email -->
+
             <a href="#">Email</a>
 
             <!-- Upload your resume before enabling -->
+
             <a href="#">Résumé</a>
 
         </div>
