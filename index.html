@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shaleena Egdell | Engineering Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ========================================
+           01. COLOUR PALETTE
+           Change these to update the entire website.
+        ======================================== */
+
+        :root {
+            --cream: #F5F0E6;
+            --beige: #DED2C3;
+            --burgundy: #792D32;
+            --dark-burgundy: #4B2226;
+            --charcoal: #292722;
+            --white: #FFFFFF;
+            --muted: #71675E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ========================================
+           02. NAVIGATION BAR
+        ======================================== */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 6%;
+            border-bottom: 1px solid #792D3225;
+            background: var(--cream);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 29px;
+            color: var(--burgundy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: var(--burgundy);
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* ========================================
+           03. HOMEPAGE HERO
+           Replace the portrait placeholder with
+           your own photograph later.
+        ======================================== */
+
+        .hero {
+            background: var(--beige);
+            padding: 65px 8%;
+            min-height: 620px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 8vw, 130px);
+            color: var(--burgundy);
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 em {
+            font-weight: 400;
+        }
+
+        .hero-description {
+            max-width: 480px;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .portrait {
+            aspect-ratio: 4 / 5;
+            max-height: 550px;
+            background: #C7B6A4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-burgundy);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .portrait img {
+            height: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 13px 28px;
+            border: 1px solid var(--burgundy);
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: 0.25s;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--burgundy);
+        }
+
+        /* ========================================
+           04. GENERAL SECTION FORMATTING
+        ======================================== */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 5vw, 70px);
+            margin-bottom: 30px;
+        }
+
+        /* ========================================
+           05. PERSONAL QUOTE AND BIOGRAPHY
+        ======================================== */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 5vw, 68px);
+            line-height: 1.05;
+            color: var(--burgundy);
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 35px;
+            color: var(--burgundy);
+            margin-top: 25px;
+        }
+
+        /* ========================================
+           06. DECORATIVE SECTION DIVIDER
+        ======================================== */
+
+        .statement {
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 35px 5%;
+            text-align: center;
+        }
+
+        .statement h2 {
+            font-size: clamp(35px, 5vw, 70px);
+            font-style: italic;
+        }
+
+        /* ========================================
+           07. ENGINEERING EXPERIENCE
+        ======================================== */
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .experience-card {
+            border-top: 1px solid var(--burgundy);
+            padding-top: 15px;
+        }
+
+        .image-placeholder {
+            aspect-ratio: 4 / 3;
+            background: var(--beige);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            height: 100%;
+        }
+
+        .card-number {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+
+        .experience-card h3 {
+            font-size: 35px;
+            margin: 12px 0;
+        }
+
+        .experience-card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .text-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--burgundy);
+            border-bottom: 1px solid var(--burgundy);
+        }
+
+        /* ========================================
+           08. PERSONAL INTERESTS
+        ======================================== */
+
+        .personal {
+            background: var(--charcoal);
+            color: var(--cream);
+        }
+
+        .personal .section-label {
+            color: var(--beige);
+        }
+
+        .personal-intro {
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .personal-image {
+            aspect-ratio: 3 / 4;
+            background: #514A43;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .personal-image img {
+            height: 100%;
+        }
+
+        .personal-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 27px;
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* ========================================
+           09. EDUCATION AND SKILLS
+        ======================================== */
+
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .snapshot-item {
+            border-top: 1px solid var(--burgundy);
+            padding-top: 20px;
+        }
+
+        .snapshot-item h3 {
+            color: var(--burgundy);
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .snapshot-item p {
+            font-size: 14px;
+        }
+
+        /* ========================================
+           10. CONTACT AND FOOTER
+        ======================================== */
+
+        footer {
+            background: var(--beige);
+            text-align: center;
+            padding: 65px 8% 30px;
+        }
+
+        footer h2 {
+            color: var(--burgundy);
+            font-size: clamp(40px, 6vw, 75px);
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 50px;
+        }
+
+        /* ========================================
+           11. MOBILE RESPONSIVENESS
+           Automatically adjusts the layout for
+           phones and smaller screens.
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+                justify-content: center;
+            }
+
+            .hero,
+            .about {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .hero {
+                padding: 50px 7%;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .experience-grid,
+            .snapshot-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .personal-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .personal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ======================================
+         NAVIGATION BAR
+         These links connect your three pages.
+    ======================================= -->
+
+    <nav>
+        <a class="logo" href="index.html">
+            Shaleena <em>Egdell</em>
+        </a>
+
+        <div class="nav-links">
+            <a class="active" href="index.html">01 About Me</a>
+            <a href="projects.html">02 Project Entries</a>
+            <a href="reflection.html">03 Reflection</a>
+        </div>
+    </nav>
+
+
+    <!-- ======================================
+         HERO / FIRST IMPRESSION
+    ======================================= -->
+
+    <header class="hero">
+
+        <div>
+            <p class="eyebrow">
+                Civil Engineering · Design · Leadership
+            </p>
+
+            <h1>
+                Hi, <em>I'm</em><br>
+                Shaleena.
+            </h1>
+
+            <p class="hero-description">
+                An aspiring civil engineer with a passion for
+                building meaningful infrastructure, bringing
+                people together, and turning ideas into reality.
+            </p>
+
+            <a class="button" href="#about">
+                A little about me
+            </a>
+        </div>
+
+        <div class="portrait">
+
+            <!--
+            PHOTO INSTRUCTIONS:
+            Upload a photo named portrait.jpg to GitHub.
+            Delete the placeholder paragraph below and
+            replace it with:
+
+            <img src="portrait.jpg"
+                 alt="Portrait of Shaleena Egdell">
+            -->
+
+            <p>Your portrait goes here</p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================
+         ABOUT ME / PERSONAL PHILOSOPHY
+         Edit this text to reflect your own story.
+    ======================================= -->
+
+    <section class="about" id="about">
+
+        <div>
+            <p class="section-label">
+                01 / A little about me
+            </p>
+
+            <div class="quote">
+                Good engineering begins with
+                <em>curiosity</em> and ends with
+                <em>purpose.</em>
+            </div>
+        </div>
+
+        <div class="about-text">
+
+            <p>
+                I am a fourth-year civil engineering student
+                at the University of British Columbia Okanagan,
+                with a particular interest in structural
+                engineering, construction, and project management.
+            </p>
+
+            <p>
+                Throughout my undergraduate degree, I have
+                sought opportunities beyond the classroom to
+                develop my technical abilities, challenge myself,
+                and grow as a leader.
+            </p>
+
+            <p>
+                I am especially interested in how projects
+                evolve from an initial idea into something
+                tangible, and how collaboration between people
+                makes that transformation possible.
+            </p>
+
+            <p>
+                As I approach graduation, I hope to contribute
+                to meaningful infrastructure projects while
+                continuing to develop as an engineering
+                professional.
+            </p>
+
+            <div class="signature">Shaleena</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DECORATIVE BANNER -->
+
+    <div class="statement">
+        <h2>The work behind the passion.</h2>
+    </div>
+
+
+    <!-- ======================================
+         ENGINEERING EXPERIENCE
+    ======================================= -->
+
+    <section id="experience">
+
+        <p class="section-label">
+            02 / My engineering journey
+        </p>
+
+        <h2 class="section-title">
+            From ideas to <em>impact.</em>
+        </h2>
+
+        <div class="experience-grid">
+
+            <!-- CARD 1: PROFESSIONAL EXPERIENCE -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+                    Add a workplace photograph
+                </div>
+
+                <p class="card-number">01 / Industry</p>
+
+                <h3>Engineering in practice.</h3>
+
+                <p>
+                    Applying engineering principles in
+                    professional environments and developing
+                    an understanding of how real-world
+                    projects are designed and delivered.
+                </p>
+
+                <!-- Add your employer, job title and
+                     specific responsibilities here. -->
+
+            </article>
+
+
+            <!-- CARD 2: STEEL BRIDGE -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+                    Add a Steel Bridge photograph
+                </div>
+
+                <p class="card-number">02 / Leadership</p>
+
+                <h3>More than building bridges.</h3>
+
+                <p>
+                    As Team Captain of the UBCO Steel Bridge
+                    Design Team, I help lead a multidisciplinary
+                    student team through engineering design,
+                    project planning, fabrication, and
+                    competition preparation.
+                </p>
+
+            </article>
+
+
+            <!-- CARD 3: CAPSTONE -->
+
+            <article class="experience-card">
+
+                <div class="image-placeholder">
+                    Add an approved capstone photograph
+                </div>
+
+                <p class="card-number">03 / Capstone</p>
+
+                <h3>Designing with purpose.</h3>
+
+                <p>
+                    Project HALT explores the development
+                    of removable vehicle barriers that
+                    enhance pedestrian safety while
+                    maintaining accessibility and
+                    operational flexibility.
+                </p>
+
+                <a class="text-link" href="projects.html">
+                    Explore the project &rarr;
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PERSONAL INTERESTS
+         Replace these examples with your own
+         hobbies, photographs and descriptions.
+    ======================================= -->
+
+    <section class="personal">
+
+        <p class="section-label">
+            03 / Beyond engineering
+        </p>
+
+        <h2 class="section-title">
+            Life outside <em>the drawings.</em>
+        </h2>
+
+        <p class="personal-intro">
+            There is more to me than engineering.
+            I believe the experiences we have outside
+            our profession shape the perspectives,
+            creativity, and character we bring into it.
+        </p>
+
+        <div class="personal-grid">
+
+            <div>
+                <div class="personal-image">
+                    Add personal photograph
+                </div>
+                <p class="personal-caption">
+                    Challenging myself.
+                </p>
+            </div>
+
+            <div>
+                <div class="personal-image">
+                    Add personal photograph
+                </div>
+                <p class="personal-caption">
+                    Exploring new places.
+                </p>
+            </div>
+
+            <div>
+                <div class="personal-image">
+                    Add personal photograph
+                </div>
+                <p class="personal-caption">
+                    Finding inspiration.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         EDUCATION, SKILLS AND CAREER INTERESTS
+    ======================================= -->
+
+    <section>
+
+        <p class="section-label">
+            04 / Professional snapshot
+        </p>
+
+        <h2 class="section-title">At a glance.</h2>
+
+        <div class="snapshot-grid">
+
+            <div class="snapshot-item">
+                <h3>Education</h3>
+                <p>
+                    University of British Columbia Okanagan
+                </p>
+                <p>Bachelor of Applied Science</p>
+                <p>Civil Engineering</p>
+                <p>Expected graduation: 2027</p>
+            </div>
+
+            <div class="snapshot-item">
+                <h3>Skills</h3>
+                <p>Engineering design</p>
+                <p>Project management</p>
+                <p>Technical communication</p>
+                <p>Team leadership</p>
+                <p>Collaborative problem-solving</p>
+            </div>
+
+            <div class="snapshot-item">
+                <h3>Career interests</h3>
+                <p>Structural engineering</p>
+                <p>Construction engineering</p>
+                <p>Infrastructure development</p>
+                <p>Project management</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         FOOTER
+         Replace the placeholder links with
+         your actual contact information.
+    ======================================= -->
+
+    <footer>
+
+        <h2>Let's build something meaningful.</h2>
+
+        <div class="contact-links">
+
+            <!-- Replace # with your LinkedIn URL -->
+            <a href="#">LinkedIn</a>
+
+            <!-- Replace # with mailto:your-email -->
+            <a href="#">Email</a>
+
+            <!-- Upload your resume before enabling -->
+            <a href="#">Résumé</a>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 Shaleena Egdell.
+            Engineering Portfolio.
+        </p>
+
+    </footer>
+
+</body>
+</html>
